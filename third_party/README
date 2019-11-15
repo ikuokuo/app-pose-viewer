@@ -1,0 +1,8 @@
+GLM
+  https://github.com/g-truc/glm.git
+  0.9.9.6
+stb
+  https://github.com/nothings/stb.git
+ImGui
+  https://github.com/ocornut/imgui.git
+  v1.73

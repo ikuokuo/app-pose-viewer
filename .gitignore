@@ -1,0 +1,11 @@
+.DS_Store
+
+# Config
+/.vscode/
+
+# Outputs
+_build/
+_install/
+_output/
+
+imgui.ini
