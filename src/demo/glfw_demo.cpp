@@ -1,8 +1,8 @@
 #include "base/glfw_base.h"
 
-#include <iostream>
-
 #include <GL/glew.h>
+
+#include <iostream>
 
 class GlfwBaseCallbackImpl : public GlfwBaseCallback {
  public:
@@ -11,7 +11,7 @@ class GlfwBaseCallbackImpl : public GlfwBaseCallback {
 
   void OnGlfwInit(GlfwBase *) override {
     // Initialize GLEW
-    glewExperimental = true; // Needed in core profile
+    glewExperimental = true;  // Needed in core profile
     if (glewInit() != GLEW_OK) {
       std::cerr << "Failed to initialize GLEW" << std::endl;
       return;

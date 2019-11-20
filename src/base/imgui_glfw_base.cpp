@@ -2,6 +2,7 @@
 
 #include <cassert>
 #include <iostream>
+#include <memory>
 
 #include "imgui_base.h"
 
@@ -9,7 +10,8 @@ namespace {
 
 class GlfwBaseCallbackImpl : public GlfwBaseCallback {
  public:
-  GlfwBaseCallbackImpl(ImGuiBase *imgui_base) : imgui_base_(imgui_base) {
+  explicit GlfwBaseCallbackImpl(ImGuiBase *imgui_base)
+    : imgui_base_(imgui_base) {
     assert(imgui_base_);
   }
 
@@ -65,7 +67,7 @@ void ImGuiGlfwBase::OnInit() {
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLAD)
   bool err = gladLoadGL() == 0;
 #else
-  bool err = false; // If you use IMGUI_IMPL_OPENGL_LOADER_CUSTOM, your loader is likely to requires some form of initialization.
+  bool err = false;  // If you use IMGUI_IMPL_OPENGL_LOADER_CUSTOM, your loader is likely to requires some form of initialization.
 #endif
   if (err) {
     std::cerr << "Failed to initialize OpenGL loader!" << std::endl;
